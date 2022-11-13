@@ -1,0 +1,41 @@
+{
+    "alphabets": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k"
+    ],
+    "numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+    ],
+    "total_boxes_each_side_header": "Total No of Boxes to be displayed on each side",
+    "max_selections_allowed": "Max No of Total Selections allowed for selecting on both the sides",
+    "max_alphabets_allowed": "Max No of Alphabets allowed for selecting",
+    "max_numbers_allowed": "Max No of Numbers allowed for selecting",
+    "max_alphabet_selected_error": "Error: Unable to select as Max No of Alphabet reached (@{value})",
+    "max_numbers_selected_error": "Error: Unable to select as Max No of Numbers reached (@{value})",
+    "max_total_selected_error": "Error: Unable to select as Max No of Selections reached (@{value})",
+    "max_selection_both_sides_input_error": "Error: You cannot enter value more than @{value} in Max No of Selections",
+    "max_selection_alphabets_input_error": "Error: You cannot enter value more than @{value} in Max No of Alphabets",
+    "max_selection_numbers_input_error": "Error: You cannot enter value more than @{value} in Max No of Numbers",
+    "max_total_boxes_created_input_error": "Error: Only Max of 11 select boxes can be Created, enter value less than or equal to 11",
+    "reset_values_to_zero": "Reset all values to '0'",
+    "success": "Success"
+}
