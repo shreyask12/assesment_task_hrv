@@ -149,8 +149,7 @@ class HomeCubit extends Cubit<HomeState> {
           numbers[index].isError = true;
           emit(
             HomeErrorState(
-              message:
-                  'max_selection_numbers_input_error'.resolveResourceWithArgs(
+              message: 'max_numbers_selected_error'.resolveResourceWithArgs(
                 {'value': (_maxNumberSelectionsAllowed).toString()},
               ),
             ),
@@ -181,8 +180,7 @@ class HomeCubit extends Cubit<HomeState> {
           alphabets[index].isError = true;
           emit(
             HomeErrorState(
-              message:
-                  'max_selection_alphabets_input_error'.resolveResourceWithArgs(
+              message: 'max_alphabet_selected_error'.resolveResourceWithArgs(
                 {'value': (_maxAlphabetSelectionsAllowed).toString()},
               ),
             ),
