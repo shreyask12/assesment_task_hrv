@@ -308,15 +308,9 @@ class _HomePageState extends State<HomePage> {
                                   itemCount: alphabetsList.length,
                                   scrollDirection: Axis.vertical,
                                   itemBuilder: (context, index) {
-                                    return Container(
+                                    return SizedBox(
                                       width: 50,
                                       height: 36,
-                                      decoration: BoxDecoration(
-                                          border: alphabetsList[index].isError
-                                              ? Border.all(
-                                                  color: Colors.redAccent,
-                                                )
-                                              : null),
                                       child: Row(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
@@ -363,16 +357,9 @@ class _HomePageState extends State<HomePage> {
                                 itemCount: numbersList.length,
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, index) {
-                                  return Container(
+                                  return SizedBox(
                                     width: 50,
                                     height: 36,
-                                    decoration: BoxDecoration(
-                                        border: numbersList[index].isError
-                                            ? Border.all(
-                                                color: Colors.redAccent,
-                                                width: 1,
-                                              )
-                                            : null),
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,

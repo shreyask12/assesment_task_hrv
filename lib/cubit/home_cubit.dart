@@ -77,6 +77,7 @@ class HomeCubit extends Cubit<HomeState> {
   void onTotalSelectionsAllowedOnBothSidesChanged(String value) {
     if (value.isEmpty) {
       _maxTotalSelectionsAllowedOnBothSides = 0;
+
       return;
     }
 
@@ -99,6 +100,28 @@ class HomeCubit extends Cubit<HomeState> {
         _maxNumberSelectionsAllowed = _maxTotalSelectionsAllowedOnBothSides -
             _maxAlphabetSelectionsAllowed;
       }
+
+      final alphabetList = _jsonDataRetriever.fetchAplhabets();
+
+      final numbersList = _jsonDataRetriever.fetchNumbers();
+
+      alphabets.clear();
+      numbers.clear();
+
+      for (int i = 0; i < _checkBoxesOnBothSides; i++) {
+        alphabets.add(CheckBoxesModel(
+          title: alphabetList[i],
+          isSelected: false,
+          isError: false,
+        ));
+
+        numbers.add(CheckBoxesModel(
+          title: numbersList[i],
+          isSelected: false,
+          isError: false,
+        ));
+      }
+
       emit(HomeDefaultState(
         alphabets: alphabets,
         numbers: numbers,
@@ -130,7 +153,6 @@ class HomeCubit extends Cubit<HomeState> {
                   'max_selection_numbers_input_error'.resolveResourceWithArgs(
                 {'value': (_maxNumberSelectionsAllowed).toString()},
               ),
-              list: numbers,
             ),
           );
         } else if (totalBoxesSelected > _maxTotalSelectionsAllowedOnBothSides) {
@@ -141,7 +163,6 @@ class HomeCubit extends Cubit<HomeState> {
               message: 'max_total_selected_error'.resolveResourceWithArgs(
                 {'value': (_maxTotalSelectionsAllowedOnBothSides).toString()},
               ),
-              list: numbers,
             ),
           );
         } else {
@@ -160,11 +181,11 @@ class HomeCubit extends Cubit<HomeState> {
           alphabets[index].isError = true;
           emit(
             HomeErrorState(
-                message: 'max_selection_alphabets_input_error'
-                    .resolveResourceWithArgs(
-                  {'value': (_maxAlphabetSelectionsAllowed).toString()},
-                ),
-                list: alphabets),
+              message:
+                  'max_selection_alphabets_input_error'.resolveResourceWithArgs(
+                {'value': (_maxAlphabetSelectionsAllowed).toString()},
+              ),
+            ),
           );
         } else if (totalBoxesSelected > _maxTotalSelectionsAllowedOnBothSides) {
           alphabets[index].isSelected = false;
@@ -174,7 +195,6 @@ class HomeCubit extends Cubit<HomeState> {
               message: 'max_total_selected_error'.resolveResourceWithArgs(
                 {'value': (_maxTotalSelectionsAllowedOnBothSides).toString()},
               ),
-              list: alphabets,
             ),
           );
         } else {

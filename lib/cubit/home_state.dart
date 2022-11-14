@@ -42,7 +42,8 @@ class HomeDefaultState extends HomeState {
 
 class HomeErrorState extends HomeState {
   final String message;
-  List<CheckBoxesModel>? list;
 
-  HomeErrorState({required this.message, this.list});
+  HomeErrorState({
+    required this.message,
+  });
 }

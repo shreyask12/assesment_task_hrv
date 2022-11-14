@@ -5,4 +5,8 @@ class CheckBoxesModel {
 
   CheckBoxesModel(
       {required this.title, required this.isSelected, required this.isError});
+
+  void changeSelectionToDefault() {
+    isSelected = false;
+  }
 }
